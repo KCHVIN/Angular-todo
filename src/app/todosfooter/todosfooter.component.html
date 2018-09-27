@@ -1,0 +1,14 @@
+<div *ngIf="isFooterDisplayed()">
+  <footer class="footer" ng-show="todos.length">
+    <span class="todo-count">{{getItemsLeftMessage()}}</span>
+    <ul class="filters">
+      <li><a [ngClass]="{ selected: allSelected }" (click)="displayAll()">All</a></li>
+      <li><a [ngClass]="{ selected: activeSelected }" (click)="displayOnlyActive()">Active</a></li>
+      <li><a [ngClass]="{ selected: completedSelected }" (click)="displayOnlyCompleted()">Completed</a></li>
+    </ul>
+    <div id="toggle-all" *ngIf="todoSelected">
+      <button class="clear-completed" (click)="deleteAll();">Clear Completed</button>
+    </div>
+  </footer>
+</div>
+<router-outlet></router-outlet>

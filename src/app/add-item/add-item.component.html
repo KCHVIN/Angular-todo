@@ -1,0 +1,5 @@
+<label for="toggle-all"></label>
+<input #newList 
+  (keyup.enter)="add(newList.value);newList.value=null" placeholder="What needs to be done?"
+  class="todoapp new-todo"
+  />
